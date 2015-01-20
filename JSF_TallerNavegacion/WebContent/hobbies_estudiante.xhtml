@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+	<ui:composition template="/templates/clienteTemplate.xhtml">
+		<ui:define name="tituloPagina">ESTUDIANTE</ui:define>
+		<ui:define name="tituloFormulario">HOBBIES DEL ESTUDIANTE</ui:define>
+		<ui:define name="contenido">
+		
+	<h:form>
+		<!-- <h:messages/> -->
+			<h:panelGrid columns="1" >
+			
+					<h:selectManyCheckbox value="#{con_Hobbie.hobbieSeleccionado}">
+						<f:selectItems
+							value="#{con_Hobbie.hobbies}"
+							var="hobbie"
+							itemValue="#{hobbie.id}"
+							itemLabel="#{hobbie.nombre}"/>						
+					</h:selectManyCheckbox>			
+			</h:panelGrid>	
+
+			<h:commandButton action="#{datosPersonales.irDatosAcademicos()}" value="Anterior" dir="ltr"/>
+			<h:commandButton action="#{datosPersonales.irInformativo()}" value="Siguiente" dir="ltr"/>
+	</h:form> </ui:define>	
+	<ui:define name="autor">LGiraldoRsd...</ui:define>
+	</ui:composition>
+</html>

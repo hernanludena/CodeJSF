@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+	<ui:composition template="/templates/clienteTemplate.xhtml">
+		<ui:define name="tituloPagina">ESTUDIANTE</ui:define>
+		<ui:define name="tituloFormulario">DATOS ACADÉMICOS</ui:define>
+		<ui:define name="contenido">
+		
+	<h:form>
+		<!-- <h:messages/> -->
+		<h:panelGrid columns="3" title="DATOS PERSONALES" border="0">
+			<h:outputText value="Nombre:" />
+			<h:inputText id="txtNombre" value="#{datosPersonales.estudiante.nombre}" onkeypress="return validarNombres(event)"/>		
+			<h:message for="txtNombre"/>
+			
+			<h:outputText value="Apellido:" />
+			<h:inputText id="txtApellido" value="#{datosPersonales.estudiante.apellido}" onkeypress="return validarNombres(event)"/>
+			<h:message for="txtApellido"/>
+			
+			<h:outputText value="Cédula:" />
+			<h:inputText id="txtCedula" value="#{datosPersonales.estudiante.cedula}" onkeypress="return validarEnteros(event)" />
+			<h:message for="txtCedula"/>
+
+			<h:outputText value="Dirección:" />
+			<h:inputText id="txtDireccion" value="#{datosPersonales.estudiante.direccion}"/>
+			<h:message for="txtApellido"/>
+			
+			<h:outputText value="Email:" />
+			<h:inputText id="txtEmail" value="#{datosPersonales.estudiante.mail}"/>
+			<h:message for="txtEmail"/>			
+				
+			<h:outputText value="Edad:" />
+			<h:inputText id="txtEdad" value="#{datosPersonales.estudiante.edad}" onkeypress="return validarEnteros(event)" />
+			<h:message for="txtEdad"/>
+									
+			<h:outputText value="Genero:" />
+			
+			<h:panelGrid columns="1" >
+			
+					<h:selectOneRadio value="#{con_Genero.generoSeleccionado}">
+						<f:selectItems
+							value="#{con_Genero.generos}"
+							var="genero"
+							itemValue="#{genero.id}"
+							itemLabel="#{genero.nombre}"/>						
+					</h:selectOneRadio>			
+			</h:panelGrid>			
+			
+			
+		</h:panelGrid>
+
+		<h:commandButton action="#{datosPersonales.irDatosAcademicos()}" value="Siguiente" dir="ltr"/>	
+	</h:form> </ui:define>	
+	<ui:define name="autor">LGiraldoRsd...</ui:define>
+	</ui:composition>
+</html>

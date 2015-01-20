@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+	<ui:composition template="/templates/clienteTemplate.xhtml">
+		<ui:define name="tituloPagina">ESTUDIANTE</ui:define>
+		<ui:define name="tituloFormulario">INFORMATIVO</ui:define>
+		<ui:define name="contenido">
+		
+	<h:form>
+		<!-- <h:messages/> -->
+		<h:panelGrid columns="2">
+
+			<h:outputText value="Nombre:" />
+			<h:outputText value="#{datosPersonales.estudiante.nombre}" />
+			
+			<h:outputText value="Apellido:" />
+			<h:outputText value="#{datosPersonales.estudiante.apellido}" />
+
+			<h:outputText value="Cédula:" />
+			<h:outputText value="#{datosPersonales.estudiante.cedula}" />
+
+			<h:outputText value="Dirección:" />
+			<h:outputText value="#{datosPersonales.estudiante.direccion}" />
+
+			<h:outputText value="Email:" />
+			<h:outputText value="#{datosPersonales.estudiante.mail}" />
+
+			<h:outputText value="Edad:" />
+			<h:outputText value="#{datosPersonales.estudiante.edad}" />
+
+			<h:outputText value="Sexo:" />
+			<h:outputText value="#{datosPersonales.estudiante.genero.nombre}" />
+
+			
+			<h:outputText value="Hobbies seleccionados:" />
+			
+			<h:panelGrid columns="3">
+			
+			<h:dataTable>
+			
+			</h:dataTable>
+			
+			</h:panelGrid>
+			
+		</h:panelGrid>		
+	</h:form>
+	</ui:define>	
+	<ui:define name="autor">LGiraldoRsd...</ui:define>
+	</ui:composition>
+</html>

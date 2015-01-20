@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+	<ui:composition template="/templates/clienteTemplate.xhtml">
+		<ui:define name="tituloPagina">CLIENTE</ui:define>
+		<ui:define name="tituloFormulario">REGISTRO DE CLIENTE</ui:define>
+		<ui:define name="contenido">
+		
+	<h:form>
+		<!-- <h:messages/> -->
+		<h:panelGrid columns="3" title="CLIENTE" border="0">
+			<h:outputText value="Nombre:" />
+			<h:inputText id="txtNombre" value="#{controladorCliente.cliente.nombre}" onkeypress="return validarNombres(event)"/>		
+			<h:message for="txtNombre"/>
+			
+			<h:outputText value="Apellido:" />
+			<h:inputText id="txtApellido" value="#{controladorCliente.cliente.apellido}" onkeypress="return validarNombres(event)"/>
+			<h:message for="txtApellido"/>
+			
+			<h:outputText value="Cédula:" />
+			<h:inputText id="txtCedula" value="#{controladorCliente.cliente.cedula}" />
+			<h:message for="txtCedula"/>
+				
+			<h:outputText value="Edad:" />
+			<h:inputText id="txtEdad" value="#{controladorCliente.cliente.edad}" onkeypress="return validarEnteros(event)" />
+			<h:message for="txtEdad"/>
+							
+			<h:commandButton action="#{controladorCliente.guardar()}" value="Guardar" dir="ltr"/>	
+		</h:panelGrid>
+		<p></p>
+		<h:outputText value="#{controladorCliente.cliente.toString()}" />
+	</h:form> </ui:define>	
+	<ui:define name="autor">LGiraldoRsd...</ui:define>
+	</ui:composition>
+</html>
