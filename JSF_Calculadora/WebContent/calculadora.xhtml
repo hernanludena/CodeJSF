@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<h:body>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputText value="CALCULADORA" /><b></b>
+			<h:outputText value="Número 1:" />
+			<h:inputText value="#{calculadora.numero1}" />		
+			<h:outputText value="Número 2:" />
+			<h:inputText value="#{calculadora.numero2}" />
+		</h:panelGrid>
+		<h:panelGrid columns="4">
+			<h:commandButton action="#{calculadora.sumar()}" value="Sumar" dir="ltr"/>
+			<h:commandButton action="#{calculadora.restar()}" value="Restar" dir="ltr"/>
+			<h:commandButton action="#{calculadora.multiplicar()}" value="Multiplicar" dir="ltr"/>
+			<h:commandButton action="#{calculadora.dividir()}" value="Dividir" dir="ltr"/>
+		</h:panelGrid>
+		<h:panelGrid columns="2">
+			<h:outputText value="RESULTADO: "  dir="ltr"/>
+			<h:outputText value="#{calculadora.resultado}" dir="rtl" />	
+		</h:panelGrid>
+		<hr/>
+		<h:panelGrid columns="4">
+			<h:outputText value="#{calculadora.numero1}" dir="rtl" />
+			<h:outputText value="#{calculadora.numero2}" dir="rtl" />
+			<h:outputText value="Resultado: " dir="rtl" />	
+			<h:outputText value="#{calculadora.resultado}" />
+		</h:panelGrid>		
+	</h:form> 		
+</h:body> 
+</html>
